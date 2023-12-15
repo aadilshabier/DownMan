@@ -1,0 +1,54 @@
+API:
+
+1. PUT /add
+
+Send URLS to download.
+
+Send as
+URL: str
+Name: str? (otherwise name can be gotten from url)
+Bitrate: (optional max bitrate)
+
+2. GET /status
+
+Get status of all the currently downloading URLs.
+If data was sent, get the status of just those URLs.
+
+3. DELETE /delete
+
+Delete the file contents of the downloaded file
+
+3. DELETE /remove
+
+Remove the file from the list
+If download was not complete, also delete its file contents
+
+4. PATCH /pause
+
+Pause downloading of the files
+
+4. PATCH /resume
+
+Resume downloading of the files
+
+5. PATCH /stop
+
+Stop downloading of the files(/resume starts from 0%)
+
+6. PATH /maxbitrate (future)
+
+Set bitrate for the file
+
+
+STATUS:
+
+What should a file download status look like?
+
+URL: str
+FileName: str
+Status: enum(READY, DOWNLOADING, COMPLETE, STOPPED, PAUSED)
+Bitrate: x bits/s
+Downloaded: y bits
+Total: z bits
+DownloadStarted: timestamp
+DownloadEnded: timestamp?
