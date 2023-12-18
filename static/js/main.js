@@ -1,7 +1,8 @@
 "use strict";
 
 const createListItem = (item) => {
-	const newItem = document.createElement("div");
+	const newItem = document.createElement("li");
+	newItem.setAttribute("class", "list-group-item");
 	const newContent = document.createTextNode(item.url);
 	newItem.append(newContent);
 	return newItem;

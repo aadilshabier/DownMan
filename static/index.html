@@ -3,21 +3,25 @@
 
 <head>
   <title>DownMan</title>
-  <link rel="stylesheet" href=="/static/css/style.css"></style>
+  <link rel="stylesheet" href="/static/css/style.css"></style>
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css"></style>
 </head>
 
 <body>
 
-<h2>Files for Download</h2>
-<div class="downloadList" id="downloadList">
-  <div>Hello</div>
-  <div>Hello</div>
-  <div>Hello</div>
+<div class="container">
+  <h2 class="row my-4">Files for Download</h2>
+  <ul class="list-group row my-2" id="downloadList">
+	<li class="list-group-item">Hello</li>
+	<li class="list-group-item">Hello</li>
+	<li class="list-group-item">Hello</li>
+  </ul>
+  <button type="button" class="btn btn-primary row my-2" onClick="populateDownloadList()">Click ME</button>
 </div>
 
-<button onClick="populateDownloadList()">Click ME</button>
 
 <script type="text/javascript" src="/static/js/main.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 
 </body>
 </html>
