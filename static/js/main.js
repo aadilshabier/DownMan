@@ -23,13 +23,29 @@ const populateDownloadList = () => {
 		})
 		.then((array) => {
 			for (const item of array) {
-				// console.log(item.url);
 				const newItem = createListItem(item);
 				newChildren.push(newItem);
 			}
 		})
 		.then(() => {
-			console.log(newChildren);
 			downloadList.replaceChildren(...newChildren);
 		});
 }
+
+const addItems = () => {
+	const url = document.getElementById("inputURL").value;
+	const name = document.getElementById("inputName").value;
+
+	let body = [{"url":url, "name":name, "completed": false}];
+
+	fetch("/add", {
+		"method": "PUT",
+		"headers": {
+			"Content-Type": "application/json",
+		},
+		"body": JSON.stringify(body),
+	});
+}
+
+// run once every second
+setInterval(populateDownloadList, 1000);

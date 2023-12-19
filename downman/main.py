@@ -17,6 +17,13 @@ async def root():
 # API endpoints
 @app.get("/status")
 async def status() -> list[models.DownloadItem]:
-    return models.items
+    items = models.get_items_from_file(DB_FILE)
+    return items
+
+@app.put("/add")
+async def add(extra_items: list[models.DownloadItem]):
+    items.extend(extra_items)
+    print("Added:", extra_items)
+    models.write_items_to_file(items, DB_FILE)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html data-bs-theme="dark">
 
 <head>
   <title>DownMan</title>
@@ -9,14 +9,30 @@
 
 <body>
 
+<nav class="navbar bg-primary-subtle">
+  <div class="container-fluid">
+	<span class="navbar-brand text-light">DownMan</span>
+  </div>
+</nav>
+
 <div class="container">
   <h2 class="row my-4">Files for Download</h2>
   <ul class="list-group row my-2" id="downloadList">
-	<li class="list-group-item">Hello</li>
-	<li class="list-group-item">Hello</li>
-	<li class="list-group-item">Hello</li>
   </ul>
-  <button type="button" class="btn btn-primary row my-2" onClick="populateDownloadList()">Click ME</button>
+  <button type="button" class="btn btn-primary row my-2" onClick="populateDownloadList()">Get from Database</button>
+
+  <h2 class="row my-4">Add Files</h2>
+  <div class="my-4">
+	<div class="row my-2">
+	  <label for="inputURL" class="form-label">URL</label>
+      <input type="text" class="form-control" id="inputURL" name="url">
+	</div>
+	<div class="row my-2">
+	  <label for="nme" class="form-label">Name</label>
+      <input type="text" class="form-control" id="inputName" name="name">
+	</div>
+	<button type="submit" class="btn btn-primary row my-2" onClick="addItems()">Submit</button>
+  </div>
 </div>
 
 
